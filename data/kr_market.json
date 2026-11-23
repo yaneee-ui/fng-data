@@ -1,9 +1,9 @@
 {
- "asof_kst": "2026-11-23 21:05",
+ "asof_kst": "2026-11-23 21:20",
  "date": "2026-11-23",
  "marketStatus": "CLOSE",
  "snapshot": "after_hours",
- "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 거래대금 100억 원 이상인 종목의 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 snapshot이 after_hours이면 시간외 가격이 섞임.",
+ "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 5.0% 이상이고 거래대금 100억 원 이상인 종목을 거래대금 큰 순으로 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 snapshot이 after_hours이면 시간외 가격이 섞임.",
  "sectors_top": [
   {
    "name": "전자장비와기기",
@@ -99,6 +99,217 @@
   }
  ],
  "stocks_top": [
+  {
+   "name": "심텍",
+   "code": "222800",
+   "market": "KOSDAQ",
+   "price": 105000.0,
+   "pct": 5.32,
+   "mcap_eok": 40969.0,
+   "value_eok": 1483.8,
+   "volume": 1455033,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "에이피알",
+   "code": "278470",
+   "market": "KOSPI",
+   "price": 256000.0,
+   "pct": 8.7,
+   "mcap_eok": 95842.0,
+   "value_eok": 1407.0,
+   "volume": 555984,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "로보티즈",
+   "code": "108490",
+   "market": "KOSDAQ",
+   "price": 249500.0,
+   "pct": 6.85,
+   "mcap_eok": 36604.0,
+   "value_eok": 979.4,
+   "volume": 400076,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  },
+  {
+   "name": "SFA반도체",
+   "code": "036540",
+   "market": "KOSDAQ",
+   "price": 9110.0,
+   "pct": 12.33,
+   "mcap_eok": 14982.0,
+   "value_eok": 763.1,
+   "volume": 8677512,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "휴림로봇",
+   "code": "090710",
+   "market": "KOSDAQ",
+   "price": 5720.0,
+   "pct": 30.0,
+   "mcap_eok": 6861.0,
+   "value_eok": 563.5,
+   "volume": 10323666,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "RFHIC",
+   "code": "218410",
+   "market": "KOSDAQ",
+   "price": 57700.0,
+   "pct": 10.54,
+   "mcap_eok": 15335.0,
+   "value_eok": 441.1,
+   "volume": 798258,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "테스",
+   "code": "095610",
+   "market": "KOSDAQ",
+   "price": 84300.0,
+   "pct": 7.8,
+   "mcap_eok": 16320.0,
+   "value_eok": 394.4,
+   "volume": 478134,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "디케이티",
+   "code": "290550",
+   "market": "KOSDAQ",
+   "price": 32750.0,
+   "pct": 11.21,
+   "mcap_eok": 6550.0,
+   "value_eok": 344.1,
+   "volume": 1102033,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "피에스케이홀딩스",
+   "code": "031980",
+   "market": "KOSDAQ",
+   "price": 126700.0,
+   "pct": 6.47,
+   "mcap_eok": 27320.0,
+   "value_eok": 276.4,
+   "volume": 225413,
+   "localTradedAt": "2026-11-23T20:20:24+09:00"
+  },
+  {
+   "name": "스피어",
+   "code": "347700",
+   "market": "KOSDAQ",
+   "price": 18540.0,
+   "pct": 9.19,
+   "mcap_eok": 9558.0,
+   "value_eok": 248.9,
+   "volume": 1398044,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "가온전선",
+   "code": "000500",
+   "market": "KOSPI",
+   "price": 219500.0,
+   "pct": 5.02,
+   "mcap_eok": 65362.0,
+   "value_eok": 233.7,
+   "volume": 109447,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  },
+  {
+   "name": "지투지바이오",
+   "code": "456160",
+   "market": "KOSDAQ",
+   "price": 39450.0,
+   "pct": 8.53,
+   "mcap_eok": 6574.0,
+   "value_eok": 227.7,
+   "volume": 572683,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "코스메카코리아",
+   "code": "241710",
+   "market": "KOSDAQ",
+   "price": 112300.0,
+   "pct": 7.16,
+   "mcap_eok": 11994.0,
+   "value_eok": 196.1,
+   "volume": 176290,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "현대무벡스",
+   "code": "319400",
+   "market": "KOSDAQ",
+   "price": 15980.0,
+   "pct": 6.25,
+   "mcap_eok": 17798.0,
+   "value_eok": 169.4,
+   "volume": 1081317,
+   "localTradedAt": "2026-11-23T20:20:16+09:00"
+  },
+  {
+   "name": "뉴파워프라즈마",
+   "code": "144960",
+   "market": "KOSDAQ",
+   "price": 11860.0,
+   "pct": 8.61,
+   "mcap_eok": 5182.0,
+   "value_eok": 168.7,
+   "volume": 1516041,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "코오롱티슈진",
+   "code": "950160",
+   "market": "KOSDAQ",
+   "price": 12830.0,
+   "pct": 9.28,
+   "mcap_eok": 10902.0,
+   "value_eok": 164.1,
+   "volume": 1272026,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "리브스메드",
+   "code": "491000",
+   "market": "KOSDAQ",
+   "price": 41000.0,
+   "pct": 6.22,
+   "mcap_eok": 10355.0,
+   "value_eok": 153.1,
+   "volume": 395605,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "인제니아테라퓨틱스(Reg.S)",
+   "code": "950260",
+   "market": "KOSDAQ",
+   "price": 25150.0,
+   "pct": 6.79,
+   "mcap_eok": 12435.0,
+   "value_eok": 114.0,
+   "volume": 467915,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "에이치브이엠",
+   "code": "295310",
+   "market": "KOSDAQ",
+   "price": 48800.0,
+   "pct": 16.75,
+   "mcap_eok": 6250.0,
+   "value_eok": 111.8,
+   "volume": 239356,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  }
+ ],
+ "stocks_pct_top": [
   {
    "name": "휴림로봇",
    "code": "090710",
@@ -208,122 +419,14 @@
    "value_eok": 227.7,
    "volume": 572683,
    "localTradedAt": "2026-11-23T20:20:20+09:00"
-  },
-  {
-   "name": "테스",
-   "code": "095610",
-   "market": "KOSDAQ",
-   "price": 84300.0,
-   "pct": 7.8,
-   "mcap_eok": 16320.0,
-   "value_eok": 394.4,
-   "volume": 478134,
-   "localTradedAt": "2026-11-23T20:20:25+09:00"
-  },
-  {
-   "name": "코스메카코리아",
-   "code": "241710",
-   "market": "KOSDAQ",
-   "price": 112300.0,
-   "pct": 7.16,
-   "mcap_eok": 11994.0,
-   "value_eok": 196.1,
-   "volume": 176290,
-   "localTradedAt": "2026-11-23T20:20:20+09:00"
-  },
-  {
-   "name": "로보티즈",
-   "code": "108490",
-   "market": "KOSDAQ",
-   "price": 249500.0,
-   "pct": 6.85,
-   "mcap_eok": 36604.0,
-   "value_eok": 979.4,
-   "volume": 400076,
-   "localTradedAt": "2026-11-23T20:20:23+09:00"
-  },
-  {
-   "name": "인제니아테라퓨틱스(Reg.S)",
-   "code": "950260",
-   "market": "KOSDAQ",
-   "price": 25150.0,
-   "pct": 6.79,
-   "mcap_eok": 12435.0,
-   "value_eok": 114.0,
-   "volume": 467915,
-   "localTradedAt": "2026-11-23T20:20:20+09:00"
-  },
-  {
-   "name": "피에스케이홀딩스",
-   "code": "031980",
-   "market": "KOSDAQ",
-   "price": 126700.0,
-   "pct": 6.47,
-   "mcap_eok": 27320.0,
-   "value_eok": 276.4,
-   "volume": 225413,
-   "localTradedAt": "2026-11-23T20:20:24+09:00"
-  },
-  {
-   "name": "현대무벡스",
-   "code": "319400",
-   "market": "KOSDAQ",
-   "price": 15980.0,
-   "pct": 6.25,
-   "mcap_eok": 17798.0,
-   "value_eok": 169.4,
-   "volume": 1081317,
-   "localTradedAt": "2026-11-23T20:20:16+09:00"
-  },
-  {
-   "name": "리브스메드",
-   "code": "491000",
-   "market": "KOSDAQ",
-   "price": 41000.0,
-   "pct": 6.22,
-   "mcap_eok": 10355.0,
-   "value_eok": 153.1,
-   "volume": 395605,
-   "localTradedAt": "2026-11-23T20:20:22+09:00"
-  },
-  {
-   "name": "심텍",
-   "code": "222800",
-   "market": "KOSDAQ",
-   "price": 105000.0,
-   "pct": 5.32,
-   "mcap_eok": 40969.0,
-   "value_eok": 1483.8,
-   "volume": 1455033,
-   "localTradedAt": "2026-11-23T20:20:25+09:00"
-  },
-  {
-   "name": "가온전선",
-   "code": "000500",
-   "market": "KOSPI",
-   "price": 219500.0,
-   "pct": 5.02,
-   "mcap_eok": 65362.0,
-   "value_eok": 233.7,
-   "volume": 109447,
-   "localTradedAt": "2026-11-23T20:20:23+09:00"
-  },
-  {
-   "name": "삼현",
-   "code": "437730",
-   "market": "KOSDAQ",
-   "price": 54700.0,
-   "pct": 4.99,
-   "mcap_eok": 17673.0,
-   "value_eok": 438.5,
-   "volume": 819357,
-   "localTradedAt": "2026-11-23T20:20:21+09:00"
   }
  ],
- "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 거래대금 30억 원 이상인 종목의 등락률 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음.",
+ "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 등락률 5.0% 이상이고 거래대금 30억 원 이상인 종목을 거래대금 큰 순으로 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음.",
  "filters": {
   "min_value_big_eok": 100,
-  "min_value_small_eok": 30
+  "min_value_small_eok": 30,
+  "min_pct": 5.0,
+  "rank_by": "value_eok"
  },
  "value_top": [
   {
@@ -439,28 +542,6 @@
  ],
  "stocks_small_top": [
   {
-   "name": "금양그린파워",
-   "code": "282720",
-   "market": "KOSDAQ",
-   "price": 9620.0,
-   "pct": 30.0,
-   "mcap_eok": 1166.0,
-   "value_eok": 217.1,
-   "volume": 2336848,
-   "localTradedAt": "2026-11-23T20:20:24+09:00"
-  },
-  {
-   "name": "코스모로보틱스",
-   "code": "439960",
-   "market": "KOSDAQ",
-   "price": 4640.0,
-   "pct": 29.97,
-   "mcap_eok": 1506.0,
-   "value_eok": 322.3,
-   "volume": 7431924,
-   "localTradedAt": "2026-11-23T20:20:17+09:00"
-  },
-  {
    "name": "빅웨이브로보틱스",
    "code": "0035S0",
    "market": "KOSDAQ",
@@ -470,72 +551,6 @@
    "value_eok": 1412.3,
    "volume": 6828436,
    "localTradedAt": "2026-11-23T20:20:21+09:00"
-  },
-  {
-   "name": "피앤에스로보틱스",
-   "code": "460940",
-   "market": "KOSDAQ",
-   "price": 5980.0,
-   "pct": 9.93,
-   "mcap_eok": 805.0,
-   "value_eok": 302.3,
-   "volume": 5125078,
-   "localTradedAt": "2026-11-23T20:20:22+09:00"
-  },
-  {
-   "name": "페니트리움바이오",
-   "code": "187660",
-   "market": "KOSDAQ",
-   "price": 7490.0,
-   "pct": 9.66,
-   "mcap_eok": 4791.0,
-   "value_eok": 149.1,
-   "volume": 2085332,
-   "localTradedAt": "2026-11-23T20:20:19+09:00"
-  },
-  {
-   "name": "아스플로",
-   "code": "159010",
-   "market": "KOSDAQ",
-   "price": 28550.0,
-   "pct": 8.97,
-   "mcap_eok": 3807.0,
-   "value_eok": 53.5,
-   "volume": 193277,
-   "localTradedAt": "2026-11-23T20:20:20+09:00"
-  },
-  {
-   "name": "아이로보틱스",
-   "code": "066430",
-   "market": "KOSDAQ",
-   "price": 1569.0,
-   "pct": 8.21,
-   "mcap_eok": 614.0,
-   "value_eok": 74.0,
-   "volume": 4473821,
-   "localTradedAt": "2026-11-23T20:20:18+09:00"
-  },
-  {
-   "name": "하이젠알앤엠",
-   "code": "160190",
-   "market": "KOSDAQ",
-   "price": 14720.0,
-   "pct": 7.84,
-   "mcap_eok": 4547.0,
-   "value_eok": 36.8,
-   "volume": 255246,
-   "localTradedAt": "2026-11-23T20:20:20+09:00"
-  },
-  {
-   "name": "브릴스",
-   "code": "468670",
-   "market": "KOSDAQ",
-   "price": 10430.0,
-   "pct": 6.97,
-   "mcap_eok": 1185.0,
-   "value_eok": 75.8,
-   "volume": 739624,
-   "localTradedAt": "2026-11-23T20:20:19+09:00"
   },
   {
    "name": "삐아",
@@ -549,6 +564,28 @@
    "localTradedAt": "2026-11-23T20:20:21+09:00"
   },
   {
+   "name": "코스모로보틱스",
+   "code": "439960",
+   "market": "KOSDAQ",
+   "price": 4640.0,
+   "pct": 29.97,
+   "mcap_eok": 1506.0,
+   "value_eok": 322.3,
+   "volume": 7431924,
+   "localTradedAt": "2026-11-23T20:20:17+09:00"
+  },
+  {
+   "name": "피앤에스로보틱스",
+   "code": "460940",
+   "market": "KOSDAQ",
+   "price": 5980.0,
+   "pct": 9.93,
+   "mcap_eok": 805.0,
+   "value_eok": 302.3,
+   "volume": 5125078,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
    "name": "매드업",
    "code": "0039P0",
    "market": "KOSDAQ",
@@ -560,25 +597,58 @@
    "localTradedAt": "2026-11-23T20:20:21+09:00"
   },
   {
-   "name": "미스터블루",
-   "code": "207760",
+   "name": "금양그린파워",
+   "code": "282720",
    "market": "KOSDAQ",
-   "price": 2090.0,
-   "pct": 6.58,
-   "mcap_eok": 347.0,
-   "value_eok": 41.6,
-   "volume": 1876388,
+   "price": 9620.0,
+   "pct": 30.0,
+   "mcap_eok": 1166.0,
+   "value_eok": 217.1,
+   "volume": 2336848,
    "localTradedAt": "2026-11-23T20:20:24+09:00"
   },
   {
-   "name": "인텔리빅스",
-   "code": "420610",
+   "name": "페니트리움바이오",
+   "code": "187660",
    "market": "KOSDAQ",
-   "price": 6960.0,
-   "pct": 5.61,
-   "mcap_eok": 789.0,
-   "value_eok": 49.8,
-   "volume": 718864,
+   "price": 7490.0,
+   "pct": 9.66,
+   "mcap_eok": 4791.0,
+   "value_eok": 149.1,
+   "volume": 2085332,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "라온로보틱스",
+   "code": "232680",
+   "market": "KOSDAQ",
+   "price": 13020.0,
+   "pct": 5.25,
+   "mcap_eok": 1726.0,
+   "value_eok": 112.2,
+   "volume": 872410,
+   "localTradedAt": "2026-11-23T20:20:24+09:00"
+  },
+  {
+   "name": "브릴스",
+   "code": "468670",
+   "market": "KOSDAQ",
+   "price": 10430.0,
+   "pct": 6.97,
+   "mcap_eok": 1185.0,
+   "value_eok": 75.8,
+   "volume": 739624,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "아이로보틱스",
+   "code": "066430",
+   "market": "KOSDAQ",
+   "price": 1569.0,
+   "pct": 8.21,
+   "mcap_eok": 614.0,
+   "value_eok": 74.0,
+   "volume": 4473821,
    "localTradedAt": "2026-11-23T20:20:18+09:00"
   },
   {
@@ -593,70 +663,48 @@
    "localTradedAt": "2026-11-23T20:20:21+09:00"
   },
   {
-   "name": "라온로보틱스",
-   "code": "232680",
+   "name": "아스플로",
+   "code": "159010",
    "market": "KOSDAQ",
-   "price": 13020.0,
-   "pct": 5.25,
-   "mcap_eok": 1726.0,
-   "value_eok": 112.2,
-   "volume": 872410,
+   "price": 28550.0,
+   "pct": 8.97,
+   "mcap_eok": 3807.0,
+   "value_eok": 53.5,
+   "volume": 193277,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "인텔리빅스",
+   "code": "420610",
+   "market": "KOSDAQ",
+   "price": 6960.0,
+   "pct": 5.61,
+   "mcap_eok": 789.0,
+   "value_eok": 49.8,
+   "volume": 718864,
+   "localTradedAt": "2026-11-23T20:20:18+09:00"
+  },
+  {
+   "name": "미스터블루",
+   "code": "207760",
+   "market": "KOSDAQ",
+   "price": 2090.0,
+   "pct": 6.58,
+   "mcap_eok": 347.0,
+   "value_eok": 41.6,
+   "volume": 1876388,
    "localTradedAt": "2026-11-23T20:20:24+09:00"
   },
   {
-   "name": "동운아나텍",
-   "code": "094170",
+   "name": "하이젠알앤엠",
+   "code": "160190",
    "market": "KOSDAQ",
-   "price": 17790.0,
-   "pct": 4.83,
-   "mcap_eok": 3596.0,
-   "value_eok": 52.6,
-   "volume": 295707,
-   "localTradedAt": "2026-11-23T20:20:19+09:00"
-  },
-  {
-   "name": "한라캐스트",
-   "code": "125490",
-   "market": "KOSDAQ",
-   "price": 9960.0,
-   "pct": 4.62,
-   "mcap_eok": 3636.0,
-   "value_eok": 81.5,
-   "volume": 838070,
-   "localTradedAt": "2026-11-23T20:20:23+09:00"
-  },
-  {
-   "name": "뉴로메카",
-   "code": "348340",
-   "market": "KOSDAQ",
-   "price": 13680.0,
-   "pct": 4.59,
-   "mcap_eok": 3202.0,
-   "value_eok": 40.4,
-   "volume": 299743,
-   "localTradedAt": "2026-11-23T20:20:23+09:00"
-  },
-  {
-   "name": "헥토파이낸셜",
-   "code": "234340",
-   "market": "KOSDAQ",
-   "price": 17410.0,
-   "pct": 4.5,
-   "mcap_eok": 2432.0,
-   "value_eok": 33.9,
-   "volume": 198131,
-   "localTradedAt": "2026-11-23T20:20:21+09:00"
-  },
-  {
-   "name": "RF머트리얼즈",
-   "code": "327260",
-   "market": "KOSDAQ",
-   "price": 27200.0,
-   "pct": 4.41,
-   "mcap_eok": 4893.0,
-   "value_eok": 151.2,
-   "volume": 582004,
-   "localTradedAt": "2026-11-23T20:20:22+09:00"
+   "price": 14720.0,
+   "pct": 7.84,
+   "mcap_eok": 4547.0,
+   "value_eok": 36.8,
+   "volume": 255246,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
   }
  ],
  "sample_record": {
