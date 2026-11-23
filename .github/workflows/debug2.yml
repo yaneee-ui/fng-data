@@ -1,0 +1,27 @@
+name: debug-naver-api
+on:
+  workflow_dispatch: {}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Naver JSON endpoints
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for u in \
+            "https://m.stock.naver.com/api/stocks/marketValue/KOSPI?page=1&pageSize=3" \
+            "https://m.stock.naver.com/api/stocks/up/KOSPI?page=1&pageSize=3" \
+            "https://m.stock.naver.com/api/stocks/industry?page=1&pageSize=3" \
+            "https://m.stock.naver.com/api/stocks/industry/list?page=1&pageSize=3"; do
+            echo "=================== $u"
+            curl -sS -L -m 30 -A "$UA" -o body.txt "$u" -w "code=%{http_code} size=%{size_download} type=%{content_type}\n"
+            head -c 700 body.txt; echo
+          done
+          echo "=================== API URLs found inside the new pages"
+          for p in "https://stock.naver.com/market/stock/kr/industry" "https://stock.naver.com/market/stock/kr/stocklist/capitalization"; do
+            echo "--- $p"
+            curl -sS -L -m 30 -A "$UA" -o page.html "$p"
+            grep -oE 'https?://[a-zA-Z0-9./_-]*naver[a-zA-Z0-9./_-]*/(api|v[0-9])[a-zA-Z0-9./_?=&%-]*' page.html | sort -u | head -n 25
+            echo "has fluctuationsRatio: $(grep -c 'fluctuationsRatio' page.html)"
+            echo "has next_f data: $(grep -c 'self.__next_f' page.html)"
+          done
