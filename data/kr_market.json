@@ -1,7 +1,8 @@
 {
- "asof_kst": "2026-11-23 20:30",
+ "asof_kst": "2026-11-23 21:03",
  "date": "2026-11-23",
  "marketStatus": "CLOSE",
+ "snapshot": "after_hours",
  "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 KRX 정규장 종가와 다를 수 있음.",
  "sectors_top": [
   {
@@ -277,6 +278,189 @@
    "pct": 5.02,
    "mcap_eok": 65362.0,
    "localTradedAt": "2026-11-23T20:20:23+09:00"
+  }
+ ],
+ "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음.",
+ "stocks_small_top": [
+  {
+   "name": "금양그린파워",
+   "code": "282720",
+   "market": "KOSDAQ",
+   "price": 9620.0,
+   "pct": 30.0,
+   "mcap_eok": 1166.0,
+   "localTradedAt": "2026-11-23T20:20:24+09:00"
+  },
+  {
+   "name": "코스모로보틱스",
+   "code": "439960",
+   "market": "KOSDAQ",
+   "price": 4640.0,
+   "pct": 29.97,
+   "mcap_eok": 1506.0,
+   "localTradedAt": "2026-11-23T20:20:17+09:00"
+  },
+  {
+   "name": "큐로셀",
+   "code": "372320",
+   "market": "KOSDAQ",
+   "price": 27550.0,
+   "pct": 29.95,
+   "mcap_eok": 4196.0,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "풍원정밀",
+   "code": "371950",
+   "market": "KOSDAQ",
+   "price": 2470.0,
+   "pct": 21.67,
+   "mcap_eok": 682.0,
+   "localTradedAt": "2026-11-23T20:20:21+09:00"
+  },
+  {
+   "name": "싸이토젠",
+   "code": "217330",
+   "market": "KOSDAQ",
+   "price": 2650.0,
+   "pct": 18.04,
+   "mcap_eok": 613.0,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  },
+  {
+   "name": "빅웨이브로보틱스",
+   "code": "0035S0",
+   "market": "KOSDAQ",
+   "price": 21150.0,
+   "pct": 17.5,
+   "mcap_eok": 2175.0,
+   "localTradedAt": "2026-11-23T20:20:21+09:00"
+  },
+  {
+   "name": "아이엠바이오로직스",
+   "code": "493280",
+   "market": "KOSDAQ",
+   "price": 14470.0,
+   "pct": 14.57,
+   "mcap_eok": 2148.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "코스리거글로벌",
+   "code": "043710",
+   "market": "KOSDAQ",
+   "price": 3915.0,
+   "pct": 12.66,
+   "mcap_eok": 678.0,
+   "localTradedAt": "2026-11-23T20:20:21+09:00"
+  },
+  {
+   "name": "한국비티비",
+   "code": "219750",
+   "market": "KOSDAQ",
+   "price": 2950.0,
+   "pct": 11.74,
+   "mcap_eok": 386.0,
+   "localTradedAt": "2026-11-23T20:20:21+09:00"
+  },
+  {
+   "name": "피앤에스로보틱스",
+   "code": "460940",
+   "market": "KOSDAQ",
+   "price": 5980.0,
+   "pct": 9.93,
+   "mcap_eok": 805.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "페니트리움바이오",
+   "code": "187660",
+   "market": "KOSDAQ",
+   "price": 7490.0,
+   "pct": 9.66,
+   "mcap_eok": 4791.0,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "나노",
+   "code": "187790",
+   "market": "KOSDAQ",
+   "price": 1505.0,
+   "pct": 9.61,
+   "mcap_eok": 464.0,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "사피엔반도체",
+   "code": "452430",
+   "market": "KOSDAQ",
+   "price": 23100.0,
+   "pct": 9.22,
+   "mcap_eok": 1911.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "아스플로",
+   "code": "159010",
+   "market": "KOSDAQ",
+   "price": 28550.0,
+   "pct": 8.97,
+   "mcap_eok": 3807.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "폴레드",
+   "code": "487580",
+   "market": "KOSDAQ",
+   "price": 2430.0,
+   "pct": 8.48,
+   "mcap_eok": 612.0,
+   "localTradedAt": "2026-11-23T20:20:16+09:00"
+  },
+  {
+   "name": "아이로보틱스",
+   "code": "066430",
+   "market": "KOSDAQ",
+   "price": 1569.0,
+   "pct": 8.21,
+   "mcap_eok": 614.0,
+   "localTradedAt": "2026-11-23T20:20:18+09:00"
+  },
+  {
+   "name": "하이젠알앤엠",
+   "code": "160190",
+   "market": "KOSDAQ",
+   "price": 14720.0,
+   "pct": 7.84,
+   "mcap_eok": 4547.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "메디포스트",
+   "code": "078160",
+   "market": "KOSDAQ",
+   "price": 8300.0,
+   "pct": 7.65,
+   "mcap_eok": 3254.0,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  },
+  {
+   "name": "대원",
+   "code": "007680",
+   "market": "KOSDAQ",
+   "price": 2650.0,
+   "pct": 7.51,
+   "mcap_eok": 350.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "브릴스",
+   "code": "468670",
+   "market": "KOSDAQ",
+   "price": 10430.0,
+   "pct": 6.97,
+   "mcap_eok": 1185.0,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
   }
  ],
  "sample_record": {
