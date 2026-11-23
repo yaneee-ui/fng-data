@@ -23,6 +23,8 @@ jobs:
 
           UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
           BASE = "https://m.stock.naver.com/api/stocks"
+          MIN_VALUE_BIG = 100    # 시총 5,000억 이상 종목: 거래대금 100억 원 이상만 '상승 종목' 후보
+          MIN_VALUE_SMALL = 30   # 시총 300억~5,000억 소형주: 거래대금 30억 원 이상만 후보
 
           def get_json(url):
               req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json", "Referer": "https://m.stock.naver.com/"})
@@ -73,15 +75,23 @@ jobs:
                           mv, p, px = num(s.get("marketValue")), num(s.get("fluctuationsRatio")), num(s.get("closePrice"))
                           if mv is None or p is None or px is None:
                               continue
+                          raw = num(s.get("accumulatedTradingValueRaw"))
+                          val = raw / 1e8 if raw is not None else None          # 거래대금(억 원)
+                          vol = num(s.get("accumulatedTradingVolumeRaw"))        # 거래량(주)
                           if mv >= 5000:
                               big += 1
+                          rec = {"name": s["stockName"], "code": s["itemCode"], "market": market,
+                                 "price": px, "pct": p, "mcap_eok": mv,
+                                 "value_eok": round(val, 1) if val is not None else None,
+                                 "volume": int(vol) if vol is not None else None,
+                                 "localTradedAt": s.get("localTradedAt")}
                           if s.get("stockEndType") == "stock" and mv >= 5000:
-                              out.append({"name": s["stockName"], "code": s["itemCode"], "market": market,
-                                          "price": px, "pct": p, "mcap_eok": mv, "localTradedAt": s.get("localTradedAt")})
+                              if val is not None and val >= MIN_VALUE_BIG:
+                                  out.append(rec)
                           elif s.get("stockEndType") == "stock" and mv >= 300:
-                              small.append({"name": s["stockName"], "code": s["itemCode"], "market": market,
-                                            "price": px, "pct": p, "mcap_eok": mv, "localTradedAt": s.get("localTradedAt")})
-                      if not items or (big == 0 and mv_last(items) < 300):
+                              if val is not None and val >= MIN_VALUE_SMALL:
+                                  small.append(rec)
+                      if not items or (big == 0 and mv_last(items) < 300):   # 시총 300억 미만 구간이면 중단
                           break
                       time.sleep(0.2)
               return out, small, sample
@@ -89,7 +99,7 @@ jobs:
           sec, status = sectors()
           stk, sml, sample = stocks()
           print("sectors", len(sec), "stocks(>=5000억)", len(stk), "small(300~5000억)", len(sml), "marketStatus", status)
-          if len(sec) < 30 or len(stk) < 100:
+          if len(sec) < 30 or len(stk) < 50:
               print("parse looks wrong; abort"); sys.exit(1)
 
           kst = datetime.timezone(datetime.timedelta(hours=9))
@@ -109,11 +119,13 @@ jobs:
               "date": now.strftime("%Y-%m-%d"),
               "marketStatus": status,
               "snapshot": snap,
-              "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 KRX 정규장 종가와 다를 수 있음.",
+              "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 거래대금 %d억 원 이상인 종목의 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 snapshot이 after_hours이면 시간외 가격이 섞임." % MIN_VALUE_BIG,
               "sectors_top": sorted(sec, key=lambda s: -s["pct"])[:10],
               "sectors_bottom": sorted(sec, key=lambda s: s["pct"])[:5],
               "stocks_top": sorted(stk, key=lambda s: -s["pct"])[:20],
-              "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음.",
+              "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 거래대금 %d억 원 이상인 종목의 등락률 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음." % MIN_VALUE_SMALL,
+              "filters": {"min_value_big_eok": MIN_VALUE_BIG, "min_value_small_eok": MIN_VALUE_SMALL},
+              "value_top": sorted([r for r in stk + sml if r["value_eok"] is not None], key=lambda r: -r["value_eok"])[:10],
               "stocks_small_top": sorted(sml, key=lambda s: -s["pct"])[:20],
               "sample_record": sample,
           }
