@@ -7,6 +7,9 @@ on:
   workflow_dispatch: {}       # 수동 실행 버튼 (첫 테스트용)
 permissions:
   contents: write
+concurrency:
+  group: fng
+  cancel-in-progress: false  
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -28,8 +31,14 @@ jobs:
           json.dump(out, open("data/fng.json","w"), ensure_ascii=False, indent=1)
           print(out)
           PY
-      - name: Commit
+            - name: Commit
         run: |
           git config user.name "fng-bot"; git config user.email "fng-bot@users.noreply.github.com"
           git add data/fng.json
-          git diff --cached --quiet || (git commit -m "update fng" && git push)
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "update fng"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 3
+          done
+          exit 1
