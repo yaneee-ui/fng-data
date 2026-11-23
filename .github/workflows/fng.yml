@@ -2,14 +2,14 @@
 name: fetch-fear-greed
 on:
   schedule:
-    - cron: "0 6 * * 1-5"    # 한국 15:00 무렵 (직전 미국 마감 값)
-    - cron: "30 22 * * 1-5"  # 미국 마감 직후
-  workflow_dispatch: {}       # 수동 실행 버튼 (첫 테스트용)
+    - cron: "0 6 * * 1-5"
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch: {}
 permissions:
   contents: write
 concurrency:
   group: fng
-  cancel-in-progress: false  
+  cancel-in-progress: false
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           json.dump(out, open("data/fng.json","w"), ensure_ascii=False, indent=1)
           print(out)
           PY
-            - name: Commit
+      - name: Commit
         run: |
           git config user.name "fng-bot"; git config user.email "fng-bot@users.noreply.github.com"
           git add data/fng.json
