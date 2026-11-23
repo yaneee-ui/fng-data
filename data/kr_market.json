@@ -1,0 +1,360 @@
+{
+ "asof_kst": "2026-11-23 20:30",
+ "date": "2026-11-23",
+ "marketStatus": "CLOSE",
+ "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 KRX 정규장 종가와 다를 수 있음.",
+ "sectors_top": [
+  {
+   "name": "전자장비와기기",
+   "pct": 2.06,
+   "rise": 27,
+   "fall": 71
+  },
+  {
+   "name": "통신장비",
+   "pct": 1.44,
+   "rise": 19,
+   "fall": 29
+  },
+  {
+   "name": "인터넷과카탈로그소매",
+   "pct": 1.12,
+   "rise": 4,
+   "fall": 2
+  },
+  {
+   "name": "화장품",
+   "pct": 0.99,
+   "rise": 15,
+   "fall": 47
+  },
+  {
+   "name": "컴퓨터와주변기기",
+   "pct": 0.31,
+   "rise": 8,
+   "fall": 10
+  },
+  {
+   "name": "사무용전자제품",
+   "pct": 0.26,
+   "rise": 1,
+   "fall": 0
+  },
+  {
+   "name": "레저용장비와제품",
+   "pct": 0.17,
+   "rise": 5,
+   "fall": 8
+  },
+  {
+   "name": "전기장비",
+   "pct": 0.1,
+   "rise": 6,
+   "fall": 27
+  },
+  {
+   "name": "문구류",
+   "pct": 0.0,
+   "rise": 0,
+   "fall": 0
+  },
+  {
+   "name": "기계",
+   "pct": -0.1,
+   "rise": 48,
+   "fall": 49
+  }
+ ],
+ "sectors_bottom": [
+  {
+   "name": "IT서비스",
+   "pct": -7.83,
+   "rise": 31,
+   "fall": 86
+  },
+  {
+   "name": "양방향미디어와서비스",
+   "pct": -6.34,
+   "rise": 6,
+   "fall": 10
+  },
+  {
+   "name": "항공화물운송과물류",
+   "pct": -6.19,
+   "rise": 3,
+   "fall": 10
+  },
+  {
+   "name": "항공사",
+   "pct": -6.02,
+   "rise": 0,
+   "fall": 9
+  },
+  {
+   "name": "건설",
+   "pct": -5.81,
+   "rise": 14,
+   "fall": 54
+  }
+ ],
+ "stocks_top": [
+  {
+   "name": "휴림로봇",
+   "code": "090710",
+   "market": "KOSDAQ",
+   "price": 5720.0,
+   "pct": 30.0,
+   "mcap_eok": 6861.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "에이치브이엠",
+   "code": "295310",
+   "market": "KOSDAQ",
+   "price": 48800.0,
+   "pct": 16.75,
+   "mcap_eok": 6250.0,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "SFA반도체",
+   "code": "036540",
+   "market": "KOSDAQ",
+   "price": 9110.0,
+   "pct": 12.33,
+   "mcap_eok": 14982.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "디케이티",
+   "code": "290550",
+   "market": "KOSDAQ",
+   "price": 32750.0,
+   "pct": 11.21,
+   "mcap_eok": 6550.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "RFHIC",
+   "code": "218410",
+   "market": "KOSDAQ",
+   "price": 57700.0,
+   "pct": 10.54,
+   "mcap_eok": 15335.0,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "코오롱티슈진",
+   "code": "950160",
+   "market": "KOSDAQ",
+   "price": 12830.0,
+   "pct": 9.28,
+   "mcap_eok": 10902.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "스피어",
+   "code": "347700",
+   "market": "KOSDAQ",
+   "price": 18540.0,
+   "pct": 9.19,
+   "mcap_eok": 9558.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "에이피알",
+   "code": "278470",
+   "market": "KOSPI",
+   "price": 256000.0,
+   "pct": 8.7,
+   "mcap_eok": 95842.0,
+   "localTradedAt": "2026-11-23T20:20:19+09:00"
+  },
+  {
+   "name": "뉴파워프라즈마",
+   "code": "144960",
+   "market": "KOSDAQ",
+   "price": 11860.0,
+   "pct": 8.61,
+   "mcap_eok": 5182.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "지투지바이오",
+   "code": "456160",
+   "market": "KOSDAQ",
+   "price": 39450.0,
+   "pct": 8.53,
+   "mcap_eok": 6574.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "테스",
+   "code": "095610",
+   "market": "KOSDAQ",
+   "price": 84300.0,
+   "pct": 7.8,
+   "mcap_eok": 16320.0,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "코스메카코리아",
+   "code": "241710",
+   "market": "KOSDAQ",
+   "price": 112300.0,
+   "pct": 7.16,
+   "mcap_eok": 11994.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "로보티즈",
+   "code": "108490",
+   "market": "KOSDAQ",
+   "price": 249500.0,
+   "pct": 6.85,
+   "mcap_eok": 36604.0,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  },
+  {
+   "name": "인제니아테라퓨틱스(Reg.S)",
+   "code": "950260",
+   "market": "KOSDAQ",
+   "price": 25150.0,
+   "pct": 6.79,
+   "mcap_eok": 12435.0,
+   "localTradedAt": "2026-11-23T20:20:20+09:00"
+  },
+  {
+   "name": "세아베스틸지주",
+   "code": "001430",
+   "market": "KOSPI",
+   "price": 32400.0,
+   "pct": 6.75,
+   "mcap_eok": 11619.0,
+   "localTradedAt": "2026-11-23T20:20:24+09:00"
+  },
+  {
+   "name": "피에스케이홀딩스",
+   "code": "031980",
+   "market": "KOSDAQ",
+   "price": 126700.0,
+   "pct": 6.47,
+   "mcap_eok": 27320.0,
+   "localTradedAt": "2026-11-23T20:20:24+09:00"
+  },
+  {
+   "name": "현대무벡스",
+   "code": "319400",
+   "market": "KOSDAQ",
+   "price": 15980.0,
+   "pct": 6.25,
+   "mcap_eok": 17798.0,
+   "localTradedAt": "2026-11-23T20:20:16+09:00"
+  },
+  {
+   "name": "리브스메드",
+   "code": "491000",
+   "market": "KOSDAQ",
+   "price": 41000.0,
+   "pct": 6.22,
+   "mcap_eok": 10355.0,
+   "localTradedAt": "2026-11-23T20:20:22+09:00"
+  },
+  {
+   "name": "심텍",
+   "code": "222800",
+   "market": "KOSDAQ",
+   "price": 105000.0,
+   "pct": 5.32,
+   "mcap_eok": 40969.0,
+   "localTradedAt": "2026-11-23T20:20:25+09:00"
+  },
+  {
+   "name": "가온전선",
+   "code": "000500",
+   "market": "KOSPI",
+   "price": 219500.0,
+   "pct": 5.02,
+   "mcap_eok": 65362.0,
+   "localTradedAt": "2026-11-23T20:20:23+09:00"
+  }
+ ],
+ "sample_record": {
+  "stockType": "domestic",
+  "stockEndType": "stock",
+  "itemCode": "005930",
+  "reutersCode": "005930",
+  "stockName": "삼성전자",
+  "sosok": "0",
+  "closePrice": "180,600",
+  "compareToPreviousClosePrice": "-2,500",
+  "compareToPreviousPrice": {
+   "code": "5",
+   "text": "하락",
+   "name": "FALLING"
+  },
+  "fluctuationsRatio": "-1.37",
+  "accumulatedTradingVolume": "19,550,322",
+  "accumulatedTradingValue": "3,449,392",
+  "accumulatedTradingValueKrwHangeul": "3조 4,494억원",
+  "localTradedAt": "2026-11-23T20:20:22+09:00",
+  "marketValue": "10,558,379",
+  "marketValueHangeul": "1,055조 8,379억원",
+  "nav": "N/A",
+  "threeMonthEarningRate": "N/A",
+  "marketStatus": "CLOSE",
+  "tradeStopType": {
+   "code": "1",
+   "text": "운영.Trading",
+   "name": "TRADING"
+  },
+  "tradableStatus": "tradable",
+  "tradableStatusCode": "ok",
+  "tradableStatusUpdatedAt": "2026-11-23T08:01:41.444+09:00",
+  "stockExchangeType": {
+   "code": "KS",
+   "zoneId": "Asia/Seoul",
+   "nationType": "KOR",
+   "delayTime": 0,
+   "startTime": "0900",
+   "endTime": "1530",
+   "closePriceSendTime": "1630",
+   "nameKor": "코스피",
+   "nameEng": "KOSPI",
+   "stockType": "domestic",
+   "nationCode": "KOR",
+   "nationName": "대한민국",
+   "name": "KOSPI"
+  },
+  "endUrl": "https://m.stock.naver.com/domestic/stock/005930",
+  "newPcUrl": "https://stock.naver.com/domestic/stock/005930",
+  "overMarketPriceInfo": {
+   "tradingSessionType": "AFTER_MARKET",
+   "overMarketStatus": "CLOSE",
+   "overPrice": "180,600",
+   "compareToPreviousPrice": {
+    "code": "5",
+    "text": "하락",
+    "name": "FALLING"
+   },
+   "compareToPreviousClosePrice": "-2,500",
+   "fluctuationsRatio": "-1.37",
+   "localTradedAt": "2026-11-23T20:00:00+09:00",
+   "tradeStopType": {
+    "code": "1",
+    "text": "운영.Trading",
+    "name": "TRADING"
+   },
+   "overPriceRaw": "180600",
+   "compareToPreviousClosePriceRaw": "-2500"
+  },
+  "stockMiniImageChart": "https://financial-vn.pstatic.net/chart/mobile/mini/krx/005930_interest.png",
+  "itemLogoUrl": "https://ssl.pstatic.net/imgstock/fn/real/logo/stock/Stock005930.svg",
+  "itemLogoPngUrl": "https://ssl.pstatic.net/imgstock/fn/real/logo/png/stock/Stock005930.png",
+  "closePriceRaw": "180600",
+  "compareToPreviousClosePriceRaw": "-2500",
+  "accumulatedTradingVolumeRaw": "19550322",
+  "accumulatedTradingValueRaw": "3449392000000",
+  "marketValueRaw": "1055837916604800"
+ }
+}
