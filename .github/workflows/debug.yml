@@ -1,0 +1,21 @@
+name: debug-naver
+on:
+  workflow_dispatch: {}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Naver
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for u in \
+            "https://finance.naver.com/sise/sise_group.naver?type=upjong" \
+            "https://finance.naver.com/sise/sise_market_sum.naver?sosok=0&page=1"; do
+            echo "=================== $u"
+            curl -sS -L -m 30 -A "$UA" -e "https://finance.naver.com/" -D headers.txt -o body.bin "$u" -w "final_url=%{url_effective} code=%{http_code} size=%{size_download}\n"
+            echo "--- headers (first 12 lines)"; head -n 12 headers.txt
+            iconv -f euc-kr -t utf-8 -c body.bin > body.txt 2>/dev/null || cp body.bin body.txt
+            echo "--- title"; grep -o "<title>[^<]*</title>" body.txt | head -n 2
+            echo "--- tables"; grep -o "<table[^>]*>" body.txt | head -n 10
+            echo "--- first 400 chars"; head -c 400 body.txt; echo
+          done
