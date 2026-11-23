@@ -1,9 +1,9 @@
-# 저장 위치: <저장소>/.github/workflows/krmarket.yml  (기존 파일을 통째로 교체)
 name: fetch-kr-market
 on:
   schedule:
-    - cron: "35 6 * * 1-5"   # 한국 15:35 (장 마감 직후)
-    - cron: "55 6 * * 1-5"   # 15:55 재시도
+    - cron: "31 6 * * 1-5"   # 한국 15:31 (정규장 마감 직후, 시간외 거래 반영 전)
+    - cron: "36 6 * * 1-5"   # 15:36 재시도
+    - cron: "55 6 * * 1-5"   # 15:55 최후 재시도(정규장 스냅샷이 없을 때만 기록)
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -54,10 +54,14 @@ jobs:
                   time.sleep(0.2)
               return out, status
 
+          def mv_last(items):
+              v = num(items[-1].get("marketValue"))
+              return v if v is not None else 0
+
           def stocks():
-              out, sample = [], None
+              out, small, sample = [], [], None
               for market in ("KOSPI", "KOSDAQ"):
-                  for page in range(1, 81):
+                  for page in range(1, 121):
                       d = get_json(f"{BASE}/marketValue/{market}?page={page}&pageSize=30")
                       items = d.get("stocks", [])
                       if not items:
@@ -74,27 +78,43 @@ jobs:
                           if s.get("stockEndType") == "stock" and mv >= 5000:
                               out.append({"name": s["stockName"], "code": s["itemCode"], "market": market,
                                           "price": px, "pct": p, "mcap_eok": mv, "localTradedAt": s.get("localTradedAt")})
-                      if big == 0:   # 시가총액 내림차순이라 5,000억 미만 구간에 들어서면 중단
+                          elif s.get("stockEndType") == "stock" and mv >= 300:
+                              small.append({"name": s["stockName"], "code": s["itemCode"], "market": market,
+                                            "price": px, "pct": p, "mcap_eok": mv, "localTradedAt": s.get("localTradedAt")})
+                      if not items or (big == 0 and mv_last(items) < 300):
                           break
                       time.sleep(0.2)
-              return out, sample
+              return out, small, sample
 
           sec, status = sectors()
-          stk, sample = stocks()
-          print("sectors", len(sec), "stocks(>=5000억)", len(stk), "marketStatus", status)
+          stk, sml, sample = stocks()
+          print("sectors", len(sec), "stocks(>=5000억)", len(stk), "small(300~5000억)", len(sml), "marketStatus", status)
           if len(sec) < 30 or len(stk) < 100:
               print("parse looks wrong; abort"); sys.exit(1)
 
           kst = datetime.timezone(datetime.timedelta(hours=9))
           now = datetime.datetime.now(kst)
+          # 15:45 이전 스냅샷만 '정규장 종가', 이후는 시간외(넥스트레이드) 가격이 섞임
+          snap = "krx_close" if now.hour * 60 + now.minute <= 15 * 60 + 45 else "after_hours"
+          try:
+              old = json.load(open("data/kr_market.json"))
+              if old.get("date") == now.strftime("%Y-%m-%d") and old.get("snapshot") == "krx_close" and snap == "after_hours":
+                  print("keep today's krx_close snapshot; skip"); sys.exit(0)
+          except FileNotFoundError:
+              pass
+          except Exception as e:
+              print("old file read failed", e)
           result = {
               "asof_kst": now.strftime("%Y-%m-%d %H:%M"),
               "date": now.strftime("%Y-%m-%d"),
               "marketStatus": status,
+              "snapshot": snap,
               "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 KRX 정규장 종가와 다를 수 있음.",
               "sectors_top": sorted(sec, key=lambda s: -s["pct"])[:10],
               "sectors_bottom": sorted(sec, key=lambda s: s["pct"])[:5],
               "stocks_top": sorted(stk, key=lambda s: -s["pct"])[:20],
+              "small_note": "시가총액 300억 이상 5,000억 원 미만 보통주(ETF·ETN 제외) 중 등락률 상위 20개. 상한가·신규상장·거래 과열 종목이 섞일 수 있음.",
+              "stocks_small_top": sorted(sml, key=lambda s: -s["pct"])[:20],
               "sample_record": sample,
           }
           json.dump(result, open("data/kr_market.json", "w"), ensure_ascii=False, indent=1)
