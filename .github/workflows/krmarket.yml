@@ -62,6 +62,8 @@ jobs:
               v = num(items[-1].get("marketValue"))
               return v if v is not None else 0
 
+          traded = []   # 모든 종목의 체결 시각(거래일·시간외 판정용)
+
           def stocks():
               out, small, sample = [], [], None
               for market in ("KOSPI", "KOSDAQ"):
@@ -75,6 +77,8 @@ jobs:
                       big = 0
                       for s in items:
                           mv, p, px = num(s.get("marketValue")), num(s.get("fluctuationsRatio")), num(s.get("closePrice"))
+                          if s.get("localTradedAt"):
+                              traded.append(s["localTradedAt"])
                           if mv is None or p is None or px is None:
                               continue
                           raw = num(s.get("accumulatedTradingValueRaw"))
@@ -106,19 +110,41 @@ jobs:
 
           kst = datetime.timezone(datetime.timedelta(hours=9))
           now = datetime.datetime.now(kst)
-          # 15:45 이전 스냅샷만 '정규장 종가', 이후는 시간외(넥스트레이드) 가격이 섞임
-          snap = "krx_close" if now.hour * 60 + now.minute <= 15 * 60 + 45 else "after_hours"
+          # 거래일과 시간외 여부는 실행 시각이 아니라 시세의 체결 시각(localTradedAt)으로 정한다.
+          # (GitHub 예약 실행은 몇 시간씩 늦어져 다음 날 새벽에 돌 수 있다.)
+          times = []
+          for t in traded:
+              try:
+                  d = datetime.datetime.fromisoformat(t)
+                  times.append(d.astimezone(kst) if d.tzinfo else d.replace(tzinfo=kst))
+              except ValueError:
+                  pass
+          if not times:
+              print("no localTradedAt; abort"); sys.exit(1)
+          last = max(times)
+          trade_date = last.strftime("%Y-%m-%d")
+          hm = last.hour * 60 + last.minute
+          # 마지막 체결이 15:45 이후면 시간외(넥스트레이드) 가격이 섞임.
+          # 당일 15:30 전에 수집했으면 장중 값.
+          if hm > 15 * 60 + 45:
+              snap = "after_hours"
+          elif now.date() == last.date() and now.hour * 60 + now.minute < 15 * 60 + 30:
+              snap = "intraday"
+          else:
+              snap = "krx_close"
+          print("trade_date", trade_date, "last_traded", last.isoformat(), "snapshot", snap)
           try:
               old = json.load(open("data/kr_market.json"))
-              if old.get("date") == now.strftime("%Y-%m-%d") and old.get("snapshot") == "krx_close" and snap == "after_hours":
-                  print("keep today's krx_close snapshot; skip"); sys.exit(0)
+              if old.get("date") == trade_date and old.get("snapshot") == "krx_close" and snap != "krx_close":
+                  print("keep krx_close snapshot of the same trading day; skip"); sys.exit(0)
           except FileNotFoundError:
               pass
           except Exception as e:
               print("old file read failed", e)
           result = {
               "asof_kst": now.strftime("%Y-%m-%d %H:%M"),
-              "date": now.strftime("%Y-%m-%d"),
+              "date": trade_date,                                   # 거래일
+              "last_traded_kst": last.strftime("%Y-%m-%d %H:%M"),   # 가장 늦은 체결 시각
               "marketStatus": status,
               "snapshot": snap,
               "note": "네이버증권(모바일 API) 기준. 시가총액 5,000억 원 이상 보통주(ETF·ETN 제외) 중 등락률 %.1f%% 이상이고 거래대금 %d억 원 이상인 종목을 거래대금 큰 순으로 상위 20개. 신규상장 여부는 구분하지 않음. 가격은 조회 시점의 최신가라 snapshot이 after_hours이면 시간외 가격이 섞임." % (MIN_PCT, MIN_VALUE_BIG),
